@@ -8,9 +8,9 @@ abstract class TransactionRepository
 {
     protected ITransactionReader $transaction_reader;
 
-    public function __construct($transaction_reader)
+    public function __construct(ITransactionReader $transaction_reader)
     {
-        $this->$transaction_reader = $transaction_reader;
+        $this->transaction_reader = $transaction_reader;
     }
 
     public function listTransactions()

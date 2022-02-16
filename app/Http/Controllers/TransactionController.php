@@ -2,9 +2,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Transaction;
+use App\Repository\EloquentTransactionReader;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
+use App\Repository\EloquentTransactionRepository;
 
 class TransactionController extends Controller
 {
@@ -23,7 +25,9 @@ class TransactionController extends Controller
         }
         $validated = $validator->validated();
         $source = $validated['source'];
-        return Transaction::all();
+        $reader = new EloquentTransactionRepository();
+        return $reader->listTransactions();
+        // /return Transaction::all();
     }
     
 }
