@@ -16,8 +16,8 @@ final class CSVTransactionReader implements ITransactionReader
      */
     public function getTransactions()
     {
-        $transactions = Excel::toCollection(new TransactionsImport, 'transactions.csv');
-        return $transactions;
+        $transactions = Excel::toArray(new TransactionsImport, 'transactions.csv');
+        return $transactions[0];
     }
 
 }
