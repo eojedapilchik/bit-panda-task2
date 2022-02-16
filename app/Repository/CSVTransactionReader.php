@@ -3,6 +3,8 @@
 namespace App\Repository;
 
 use App\Repository\ITransactionReader;
+use App\Imports\TransactionsImport;
+use Maatwebsite\Excel\Facades\Excel;
 
 final class CSVTransactionReader implements ITransactionReader
 {
@@ -14,7 +16,8 @@ final class CSVTransactionReader implements ITransactionReader
      */
     public function getTransactions()
     {
-        return "CSV";
+        $transactions = Excel::toCollection(new TransactionsImport, 'transactions.csv');
+        return $transactions;
     }
 
 }
