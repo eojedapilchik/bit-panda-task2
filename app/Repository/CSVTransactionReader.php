@@ -4,7 +4,7 @@ namespace App\Repository;
 
 use App\Repository\ITransactionReader;
 
-class CSVTransactionReader implements ITransactionReader
+final class CSVTransactionReader implements ITransactionReader
 {
 
     /**
@@ -16,4 +16,5 @@ class CSVTransactionReader implements ITransactionReader
     {
         return "CSV";
     }
+
 }
