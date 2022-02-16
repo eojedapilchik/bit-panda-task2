@@ -12,10 +12,10 @@ abstract class TransactionRepoFactory
         switch ($type)
         {
             case 'csv':
-                return new EloquentTransactionRepository;
+                return new EloquentTransactionRepository();
                 break;
             case 'db':
-                return new EloquentTransactionRepository;
+                return new EloquentTransactionRepository();
                 break;
         }
     }
