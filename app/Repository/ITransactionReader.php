@@ -4,5 +4,5 @@ namespace App\Repository;
 
 interface ITransactionReader
 {
-    public function getTransactions($field,$value);
+    public function getTransactions();
 }

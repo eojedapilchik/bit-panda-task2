@@ -12,4 +12,9 @@ abstract class TransactionRepository
     {
         $this->$transaction_reader = $transaction_reader;
     }
+
+    public function listTransactions()
+    {
+        return $this->transaction_reader->getTransactions();
+    }
 }
