@@ -3,7 +3,6 @@
 namespace App\Repository;
 
 use App\Repository\ITransactionReader;
-use App\Models\Transaction;
 
 class CSVTransactionReader implements ITransactionReader
 {

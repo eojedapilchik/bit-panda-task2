@@ -3,6 +3,7 @@
 namespace App\Factory;
 
 use App\Repository\EloquentTransactionRepository;
+use App\Repository\CSVTransactionRepository;
 use App\Repository\TransactionRepository;
 
 abstract class TransactionRepoFactory
@@ -12,7 +13,7 @@ abstract class TransactionRepoFactory
         switch ($type)
         {
             case 'csv':
-                return new EloquentTransactionRepository();
+                return new CSVTransactionRepository();
                 break;
             case 'db':
                 return new EloquentTransactionRepository();
