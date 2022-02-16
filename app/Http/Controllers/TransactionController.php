@@ -21,7 +21,7 @@ class TransactionController extends Controller
         if ($validator->fails()) {
             return response()->json("Bad Request", 400);
         }
-        $validated = $validator->safe()->only(['source']);
+        $validated = $validator->validated();
         $source = $validated['source'];
         return Transaction::all();
     }
